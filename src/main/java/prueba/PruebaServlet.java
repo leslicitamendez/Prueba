@@ -9,11 +9,20 @@ import javax.servlet.http.HttpServletResponse;
 
 public class PruebaServlet extends HttpServlet
 {
+	Bisiesto bisiesto = new Bisiesto();
+	
 	@Override
 	protected void service(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException
             {
-				String anho = request.getParameter("anho");
-				response.getWriter().println(anho);
+				String year = request.getParameter("anho");
+				bisiesto.setAnho(Integer.parseInt(year));
+				if (bisiesto.esAnhoBisiesto()) {
+					response.getWriter().println(
+                                "El anho " + bisiesto.getAnho() + " es Bisiesto!");
+				} else {
+                response.getWriter().println(
+                                "El anho " + bisiesto.getAnho() + " No es Bisiesto!");
+        }
             }
 }
