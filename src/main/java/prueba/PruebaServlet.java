@@ -15,8 +15,8 @@ public class PruebaServlet extends HttpServlet
 	protected void service(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException
             {
-				String year = request.getParameter("anho");
-				bisiesto.setAnho(Integer.parseInt(year));
+				String anhito = request.getParameter("anho");
+				bisiesto.setAnho(Integer.parseInt(anhito));
 				if (bisiesto.esAnhoBisiesto()) {
 					response.getWriter().println(
                                 "El anho " + bisiesto.getAnho() + " es Bisiesto!");

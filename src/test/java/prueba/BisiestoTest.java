@@ -23,7 +23,7 @@ public class BisiestoTest {
 
     @Test
     public void testCambiarAnio() {
-            bi = new Bisiesto(1920);
+            bi = new Bisiesto(2011);
             bi.setAnho(1999);
             assertEquals(1999, bi.getAnho());
     }
